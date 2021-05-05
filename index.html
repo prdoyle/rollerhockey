@@ -15,29 +15,51 @@ function inputFetcher(moduleName) {
 	};
 }
 
+function outputter(moduleName) {
+	return function (outputName, value) {
+		return document.getElementById(moduleName + "-" + outputName).value = value;
+	};
+}
+
+function rollDie(numSides) {
+	return 1 + Math.floor( numSides * Math.random() );
+}
+
 function updateShot() {
 	input = inputFetcher("shot");
 	off = input("off");
 	goa = input("goa");
 	qual = input("qual");
-	output = document.getElementById("shot-out");
-	output.value = Math.floor( (off / goa)*(off / 10)*(qual+4) );
+
+	output = outputter("shot");
+	output("out", Math.floor( (off / goa)*(off / 10)*(qual+4) ));
 }
 
 function updateDefend() {
 	input = inputFetcher("defend");
 	def = input("def");
 	off = input("off");
-	output = document.getElementById("defend-out");
-	output.value = Math.floor( (def/3)*(def/off) );
+
+	output = outputter("defend");
+	output("out", Math.floor( (def/3)*(def/off) ));
 }
 
 function updateSave() {
 	input = inputFetcher("save");
 	goa = input("goa");
 	qual = input("qual");
-	output = document.getElementById("save-out");
-	output.value = Math.floor( goa / (5 * qual) );
+
+	output = outputter("save");
+	output("out", Math.floor( goa / (5 * qual) ));
+}
+
+function selectHighlight() {
+	home = rollDie(4)
+	away = rollDie(4)
+
+	output = outputter("highlight");
+	output("home", home);
+	output("away", away);
 }
 
 </script>
@@ -81,6 +103,17 @@ function updateSave() {
   <label for="save-out">Over:</label>
   <textarea id="save-out" value="456"></textarea>
 </form>
+
+<h2>Highlight selector</h2>
+
+<div>
+  <button onclick="selectHighlight()">GO!</button>
+  <br/>
+  <label for="highlight-home">Home:</label>
+  <textarea id="highlight-home" value="456"></textarea>
+  <label for="highlight-away">Away:</label>
+  <textarea id="highlight-away" value="456"></textarea>
+</div>
 
   
 </body>
