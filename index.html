@@ -32,6 +32,14 @@ function updateDefend() {
 	output.value = Math.floor( (def/3)*(def/off) );
 }
 
+function updateSave() {
+	input = inputFetcher("save");
+	goa = input("goa");
+	qual = input("qual");
+	output = document.getElementById("save-out");
+	output.value = Math.floor( goa / (5 * qual) );
+}
+
 </script>
 
 <body>
@@ -60,6 +68,18 @@ function updateDefend() {
   <br/>
   <label for="defend-out">Over:</label>
   <textarea id="defend-out" value="456"></textarea>
+</form>
+
+<h2>Save</h2>
+
+<form action="/fictitious_page.html">
+  <label for="save-goa">GOA:</label>
+  <textarea id="save-goa" value="123" onkeyup="updateSave()"></textarea>
+  <label for="save-qual">QUAL:</label>
+  <textarea id="save-qual" value="456" onkeyup="updateSave()"></textarea>
+  <br/>
+  <label for="save-out">Over:</label>
+  <textarea id="save-out" value="456"></textarea>
 </form>
 
   
