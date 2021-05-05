@@ -9,6 +9,21 @@
 
 <script type="text/javascript">
 
+plays {
+	"fourOut":   { "name": "Four out", "image": "nonexistent.jpg" },
+	"leftWrap":  { "name": "Left wrap", "image": "nonexistent.jpg" },
+	"rightWrap": { "name": "Right wrap", "image": "nonexistent.jpg" },
+	"leftTip":   { "name": "Left tip", "image": "nonexistent.jpg" },
+	"rightTip":  { "name": "Right tip", "image": "nonexistent.jpg" },
+	"leftBTN":   { "name": "Left BTN", "image": "nonexistent.jpg" },
+	"rightBTN":  { "name": "Right BTN", "image": "nonexistent.jpg" }
+};
+
+teams = {
+	"BOS" : { "plays": ["fourOut", "leftWrap", "rightWrap"], "name": "Boston" },
+	"CON" : { "plays": ["fourOut", "leftTip", "rightBTN"], "name": "Connecticut" }
+};
+
 function inputFetcher(moduleName) {
 	return function (inputName) {
 		return parseFloat(document.getElementById(moduleName + "-" + inputName).value);
