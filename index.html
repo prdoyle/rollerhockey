@@ -9,7 +9,7 @@
 
 <script type="text/javascript">
 
-plays {
+plays = {
 	"fourOut":   { "name": "Four out", "image": "nonexistent.jpg" },
 	"leftWrap":  { "name": "Left wrap", "image": "nonexistent.jpg" },
 	"rightWrap": { "name": "Right wrap", "image": "nonexistent.jpg" },
@@ -80,6 +80,36 @@ function selectHighlight() {
 	output("winner", (roll <= home)? "Home" : "Away")
 }
 
+function pickPlay(team) {
+	o_defenders = ( rollDie(3), rollDie(3) ); // TODO: I don't know what this means or what to do with it
+	roll = rollDie(10);
+	if (roll <= 4) {
+		play = team.plays[0];
+	} else if (roll <= 7) {
+		play = team.plays[1];
+	} else if (roll <= 9) {
+		play = team.plays[2];
+	} else {
+		play = "Breakaway";
+	}
+	return play;
+}
+
+function createPlay() {
+	input = inputFetcher("play");
+	output = outputter("play");
+	off = teams[input("off")];
+	def = teams[input("def")];
+
+	offensive_line = rollDie(2); // TODO: What is this for?
+	off_play = pickPlay(off);
+	def_play = pickPlay(def);
+
+	puck_carrier = rollDie(4);
+	previous_pass = rollDie(4);
+
+}
+
 </script>
 
 <body>
@@ -132,6 +162,19 @@ function selectHighlight() {
   <textarea id="highlight-home" value="456"></textarea>
   <label for="highlight-away">Away:</label>
   <textarea id="highlight-away" value="456"></textarea>
+</div>
+
+<h2>Play creator</h2>
+
+<div>
+  <label for="play-off">OFF:</label>
+  <textarea id="play-off" value="123" style="text-transform: uppercase;"></textarea>
+  <label for="play-def">DEF:</label>
+  <textarea id="play-def" value="123" style="text-transform: uppercase;"></textarea>
+  <br/>
+  <button onclick="createPlay()">GO!</button>
+  <br/>
+  Yeah... this doesn't do anything yet.
 </div>
 
   
