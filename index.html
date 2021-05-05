@@ -155,38 +155,38 @@ function createPlay() {
 <h2>Shot</h2>
 
 <form action="/fictitious_page.html">
-  <label for="shot-off">OFF:</label>
+  <label for="shot-off">Offence:</label>
   <textarea id="shot-off" value="456" onkeyup="updateShot()"></textarea>
-  <label for="shot-goa">GOA:</label>
+  <label for="shot-goa">Goalie:</label>
   <textarea id="shot-goa" value="123" onkeyup="updateShot()"></textarea>
-  <label for="shot-qual">QUAL:</label>
+  <label for="shot-qual">Shot quality:</label>
   <textarea id="shot-qual" value="123" onkeyup="updateShot()"></textarea>
   <br/>
-  <label for="shot-out">Over:</label>
+  <label for="shot-out">Max roll:</label>
   <textarea id="shot-out" value="456"></textarea>
 </form>
 
 <h2>Defend</h2>
 
 <form action="/fictitious_page.html">
-  <label for="defend-def">DEF:</label>
+  <label for="defend-def">Defence:</label>
   <textarea id="defend-def" value="123" onkeyup="updateDefend()"></textarea>
-  <label for="defend-off">OFF:</label>
+  <label for="defend-off">Offence:</label>
   <textarea id="defend-off" value="456" onkeyup="updateDefend()"></textarea>
   <br/>
-  <label for="defend-out">Over:</label>
+  <label for="defend-out">Max roll:</label>
   <textarea id="defend-out" value="456"></textarea>
 </form>
 
 <h2>Save</h2>
 
 <form action="/fictitious_page.html">
-  <label for="save-goa">GOA:</label>
+  <label for="save-goa">Goalie:</label>
   <textarea id="save-goa" value="123" onkeyup="updateSave()"></textarea>
-  <label for="save-qual">QUAL:</label>
+  <label for="save-qual">Shot quality:</label>
   <textarea id="save-qual" value="456" onkeyup="updateSave()"></textarea>
   <br/>
-  <label for="save-out">Over:</label>
+  <label for="save-out">Max roll:</label>
   <textarea id="save-out" value="456"></textarea>
 </form>
 
@@ -205,28 +205,44 @@ function createPlay() {
 <h2>Play creator</h2>
 
 <div>
-  <label for="play-off">OFF:</label>
+  <label for="play-off">Offence:</label>
   <textarea id="play-off" value="123" onkeyup="this.value = this.value.toUpperCase()">BOS</textarea>
-  <label for="play-def">DEF:</label>
+  <label for="play-def">Defence:</label>
   <textarea id="play-def" value="123" onkeyup="this.value = this.value.toUpperCase()">CON</textarea>
   <br/>
   <button onclick="createPlay()">GO!</button>
   <br/>
-	<label for="play-o_fwd">o_fwd:</label>
+  <table>
+  <tr>
+  <td>
+	<label for="play-o_fwd">Off-fwd:</label>
 	<textarea id="play-o_fwd"></textarea>
-	<label for="play-o_def">o_def:</label>
-	<textarea id="play-o_def"></textarea>
-	<label for="play-d_fwd">d_fwd:</label>
+  </td>
+  <td>
+	<label for="play-d_fwd">Def-fwd:</label>
 	<textarea id="play-d_fwd"></textarea>
-	<label for="play-d_def">d_def:</label>
+  </td>
+  </tr>
+  <tr>
+  <td>
+	<label for="play-o_def">Off-def:</label>
+	<textarea id="play-o_def"></textarea>
+  </td>
+  <td>
+	<label for="play-d_def">Def-def:</label>
 	<textarea id="play-d_def"></textarea>
-	<label for="play-play_name">play_name:</label>
+  </td>
+  </tr>
+  </table>
+	<label for="play-play_name">Play:</label>
 	<textarea id="play-play_name"></textarea>
 	<label for="play-play_pic">play_pic:</label>
 	<textarea id="play-play_pic"></textarea>
-	<label for="play-carrier">carrier:</label>
+	<br/>
+	<label for="play-carrier">Puck carrier:</label>
 	<textarea id="play-carrier"></textarea>
-	<label for="play-prev_pass">prev_pass:</label>
+	<br/>
+	<label for="play-prev_pass">Passed from:</label>
 	<textarea id="play-prev_pass"></textarea>
 </div>
 
