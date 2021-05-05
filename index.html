@@ -3,21 +3,52 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="css/style.css">
+  <!--<link rel="stylesheet" href="css/style.css">-->
   <title>Roller hockey calculator</title>
 </head>
 
 <script type="text/javascript">
+
+function inputFetcher(moduleName) {
+	return function (inputName) {
+		return parseFloat(document.getElementById(moduleName + "-" + inputName).value);
+	};
+}
+
+function updateShot() {
+	input = inputFetcher("shot");
+	off = input("off");
+	goa = input("goa");
+	qual = input("qual");
+	output = document.getElementById("shot-out");
+	output.value = Math.floor( (off / goa)*(off / 10)*(qual+4) );
+}
+
 function updateDefend() {
-	def = document.getElementById("defend-def").value;
-	off = document.getElementById("defend-off").value;
+	input = inputFetcher("defend");
+	def = input("def");
+	off = input("off");
 	output = document.getElementById("defend-out");
 	output.value = Math.floor( (def/3)*(def/off) );
-	//output.select()
 }
+
 </script>
 
 <body>
+
+<h2>Shot</h2>
+
+<form action="/fictitious_page.html">
+  <label for="shot-off">OFF:</label>
+  <textarea id="shot-off" value="456" onkeyup="updateShot()"></textarea>
+  <label for="shot-goa">GOA:</label>
+  <textarea id="shot-goa" value="123" onkeyup="updateShot()"></textarea>
+  <label for="shot-qual">QUAL:</label>
+  <textarea id="shot-qual" value="123" onkeyup="updateShot()"></textarea>
+  <br/>
+  <label for="shot-out">Over:</label>
+  <textarea id="shot-out" value="456"></textarea>
+</form>
 
 <h2>Defend</h2>
 
