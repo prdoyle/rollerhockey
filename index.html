@@ -5,24 +5,23 @@
   <meta charset="utf-8">
   <!--<link rel="stylesheet" href="css/style.css">-->
   <title>Roller hockey calculator</title>
-</head>
 
 <script type="text/javascript">
 
 plays = {
-	"fourOut":   { "name": "Four out", "image": "nonexistent.jpg" },
-	"leftWrap":  { "name": "Left wrap", "image": "nonexistent.jpg" },
-	"rightWrap": { "name": "Right wrap", "image": "nonexistent.jpg" },
-	"leftTip":   { "name": "Left tip", "image": "nonexistent.jpg" },
-	"rightTip":  { "name": "Right tip", "image": "nonexistent.jpg" },
-	"leftBTN":   { "name": "Left BTN", "image": "nonexistent.jpg" },
-	"rightBTN":  { "name": "Right BTN", "image": "nonexistent.jpg" },
-	"Breakaway": { "name": "Breakaway", "image": "nonexistent.jpg" }
+	"fourOut":   { "name": "Four out", "image": "4 out.png" },
+	"leftWrap":  { "name": "Left wrap", "image": "Left Wrap.png" },
+	"rightWrap": { "name": "Right wrap", "image": "Right Wrap.png" },
+	"leftTip":   { "name": "Left tip", "image": "Left Tip.png" },
+	"rightTip":  { "name": "Right tip", "image": "Right Tip.png" },
+	"leftBTN":   { "name": "Left BTN", "image": "Left BTN.png" },
+	"rightBTN":  { "name": "Right BTN", "image": "Right BTN.png" },
+	"Breakaway": { "name": "Breakaway", "image": "breakaway.jpg" }
 };
 
 teams = {
-	"BOS" : { "plays": ["fourOut", "leftWrap", "rightWrap"], "name": "Boston" },
-	"CON" : { "plays": ["fourOut", "leftTip", "rightBTN"], "name": "Connecticut" }
+	"BOS" : { "plays": ["fourOut", "leftWrap", "rightWrap"] },
+	"CON" : { "plays": ["fourOut", "leftTip", "rightBTN"] }
 };
 
 function stringFetcher(moduleName) {
@@ -143,12 +142,22 @@ function createPlay() {
 	output("d_fwd", defensive_lineup.forward_line);
 	output("d_def", defensive_lineup.defenders);
 	output("play_name", play.name);
-	output("play_pic", play.image);
 	output("carrier", puck_carrier);
 	output("prev_pass", previous_pass);
+	document.getElementById("play-image").src = "images/" + play.image;
 }
 
 </script>
+
+<style>
+img {
+  display: block;
+  max-width:25em;
+  width: auto;
+  height: auto;
+}
+</style>
+</head>
 
 <body>
 
@@ -156,50 +165,50 @@ function createPlay() {
 
 <form action="/fictitious_page.html">
   <label for="shot-off">Offence:</label>
-  <input id="shot-off" value="456" onkeyup="updateShot()"></input>
+  <input id="shot-off" onkeyup="updateShot()"></input>
   <label for="shot-goa">Goalie:</label>
-  <input id="shot-goa" value="123" onkeyup="updateShot()"></input>
+  <input id="shot-goa" onkeyup="updateShot()"></input>
   <label for="shot-qual">Shot quality:</label>
-  <input id="shot-qual" value="123" onkeyup="updateShot()"></input>
+  <input id="shot-qual" onkeyup="updateShot()"></input>
   <br/>
   <label for="shot-out">Max roll:</label>
-  <input id="shot-out" value="456"></input>
+  <input id="shot-out" ></input>
 </form>
 
 <h2>Defend</h2>
 
 <form action="/fictitious_page.html">
   <label for="defend-def">Defence:</label>
-  <input id="defend-def" value="123" onkeyup="updateDefend()"></input>
+  <input id="defend-def"  onkeyup="updateDefend()"></input>
   <label for="defend-off">Offence:</label>
-  <input id="defend-off" value="456" onkeyup="updateDefend()"></input>
+  <input id="defend-off"  onkeyup="updateDefend()"></input>
   <br/>
   <label for="defend-out">Max roll:</label>
-  <input id="defend-out" value="456"></input>
+  <input id="defend-out" ></input>
 </form>
 
 <h2>Save</h2>
 
 <form action="/fictitious_page.html">
   <label for="save-goa">Goalie:</label>
-  <input id="save-goa" value="123" onkeyup="updateSave()"></input>
+  <input id="save-goa"  onkeyup="updateSave()"></input>
   <label for="save-qual">Shot quality:</label>
-  <input id="save-qual" value="456" onkeyup="updateSave()"></input>
+  <input id="save-qual"  onkeyup="updateSave()"></input>
   <br/>
   <label for="save-out">Max roll:</label>
-  <input id="save-out" value="456"></input>
+  <input id="save-out" ></input>
 </form>
 
 <h2>Highlight selector</h2>
 
 <div>
   <button onclick="selectHighlight()">GO!</button>
-  <input id="highlight-winner" value="456"></input>
+  <input id="highlight-winner" ></input>
   <br/>
   <label for="highlight-home">Home:</label>
-  <input id="highlight-home" value="456"></input>
+  <input id="highlight-home" ></input>
   <label for="highlight-away">Away:</label>
-  <input id="highlight-away" value="456"></input>
+  <input id="highlight-away" ></input>
 </div>
 
 <h2>Play creator</h2>
@@ -208,9 +217,9 @@ function createPlay() {
   <button onclick="createPlay()">GO!</button>
   <br/>
   <label for="play-off">Offence:</label>
-  <input id="play-off" value="123" onkeyup="this.value = this.value.toUpperCase()">BOS</input>
+  <input id="play-off" value="BOS" onkeyup="this.value = this.value.toUpperCase()"></input>
   <label for="play-def">Defence:</label>
-  <input id="play-def" value="123" onkeyup="this.value = this.value.toUpperCase()">CON</input>
+  <input id="play-def" value="CON" onkeyup="this.value = this.value.toUpperCase()"></input>
   <br/>
   <table>
   <tr>
@@ -234,10 +243,10 @@ function createPlay() {
   </td>
   </tr>
   </table>
+	<img id="play-image" src="images/nothing-yet.jfif"/>
+	<br/>
 	<label for="play-play_name">Play:</label>
 	<input id="play-play_name"></input>
-	<label for="play-play_pic">play_pic:</label>
-	<input id="play-play_pic"></input>
 	<br/>
 	<label for="play-carrier">Puck carrier:</label>
 	<input id="play-carrier"></input>
