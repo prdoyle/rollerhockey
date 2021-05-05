@@ -57,9 +57,12 @@ function selectHighlight() {
 	home = rollDie(4)
 	away = rollDie(4)
 
+	roll = rollDie(home+away)
+
 	output = outputter("highlight");
 	output("home", home);
 	output("away", away);
+	output("winner", (roll <= home)? "Home" : "Away")
 }
 
 </script>
@@ -108,6 +111,7 @@ function selectHighlight() {
 
 <div>
   <button onclick="selectHighlight()">GO!</button>
+  <textarea id="highlight-winner" value="456"></textarea>
   <br/>
   <label for="highlight-home">Home:</label>
   <textarea id="highlight-home" value="456"></textarea>
