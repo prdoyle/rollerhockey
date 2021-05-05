@@ -7,11 +7,30 @@
   <title>Roller hockey calculator</title>
 </head>
 
-<body>
-  
-<div>
-  
-</div>
+<script type="text/javascript">
+function updateDefend() {
+	def = document.getElementById("defend-def").value;
+	off = document.getElementById("defend-off").value;
+	output = document.getElementById("defend-out");
+	output.value = Math.floor( (def/3)*(def/off) );
+	//output.select()
+}
+</script>
 
+<body>
+
+<h2>Defend</h2>
+
+<form action="/fictitious_page.html">
+  <label for="defend-def">DEF:</label>
+  <textarea id="defend-def" value="123" onkeyup="updateDefend()"></textarea>
+  <label for="defend-off">OFF:</label>
+  <textarea id="defend-off" value="456" onkeyup="updateDefend()"></textarea>
+  <br/>
+  <label for="defend-out">Over:</label>
+  <textarea id="defend-out" value="456"></textarea>
+</form>
+
+  
 </body>
 </html>
