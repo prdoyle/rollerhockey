@@ -156,94 +156,94 @@ function createPlay() {
 
 <form action="/fictitious_page.html">
   <label for="shot-off">Offence:</label>
-  <textarea id="shot-off" value="456" onkeyup="updateShot()"></textarea>
+  <input id="shot-off" value="456" onkeyup="updateShot()"></input>
   <label for="shot-goa">Goalie:</label>
-  <textarea id="shot-goa" value="123" onkeyup="updateShot()"></textarea>
+  <input id="shot-goa" value="123" onkeyup="updateShot()"></input>
   <label for="shot-qual">Shot quality:</label>
-  <textarea id="shot-qual" value="123" onkeyup="updateShot()"></textarea>
+  <input id="shot-qual" value="123" onkeyup="updateShot()"></input>
   <br/>
   <label for="shot-out">Max roll:</label>
-  <textarea id="shot-out" value="456"></textarea>
+  <input id="shot-out" value="456"></input>
 </form>
 
 <h2>Defend</h2>
 
 <form action="/fictitious_page.html">
   <label for="defend-def">Defence:</label>
-  <textarea id="defend-def" value="123" onkeyup="updateDefend()"></textarea>
+  <input id="defend-def" value="123" onkeyup="updateDefend()"></input>
   <label for="defend-off">Offence:</label>
-  <textarea id="defend-off" value="456" onkeyup="updateDefend()"></textarea>
+  <input id="defend-off" value="456" onkeyup="updateDefend()"></input>
   <br/>
   <label for="defend-out">Max roll:</label>
-  <textarea id="defend-out" value="456"></textarea>
+  <input id="defend-out" value="456"></input>
 </form>
 
 <h2>Save</h2>
 
 <form action="/fictitious_page.html">
   <label for="save-goa">Goalie:</label>
-  <textarea id="save-goa" value="123" onkeyup="updateSave()"></textarea>
+  <input id="save-goa" value="123" onkeyup="updateSave()"></input>
   <label for="save-qual">Shot quality:</label>
-  <textarea id="save-qual" value="456" onkeyup="updateSave()"></textarea>
+  <input id="save-qual" value="456" onkeyup="updateSave()"></input>
   <br/>
   <label for="save-out">Max roll:</label>
-  <textarea id="save-out" value="456"></textarea>
+  <input id="save-out" value="456"></input>
 </form>
 
 <h2>Highlight selector</h2>
 
 <div>
   <button onclick="selectHighlight()">GO!</button>
-  <textarea id="highlight-winner" value="456"></textarea>
+  <input id="highlight-winner" value="456"></input>
   <br/>
   <label for="highlight-home">Home:</label>
-  <textarea id="highlight-home" value="456"></textarea>
+  <input id="highlight-home" value="456"></input>
   <label for="highlight-away">Away:</label>
-  <textarea id="highlight-away" value="456"></textarea>
+  <input id="highlight-away" value="456"></input>
 </div>
 
 <h2>Play creator</h2>
 
 <div>
-  <label for="play-off">Offence:</label>
-  <textarea id="play-off" value="123" onkeyup="this.value = this.value.toUpperCase()">BOS</textarea>
-  <label for="play-def">Defence:</label>
-  <textarea id="play-def" value="123" onkeyup="this.value = this.value.toUpperCase()">CON</textarea>
-  <br/>
   <button onclick="createPlay()">GO!</button>
+  <br/>
+  <label for="play-off">Offence:</label>
+  <input id="play-off" value="123" onkeyup="this.value = this.value.toUpperCase()">BOS</input>
+  <label for="play-def">Defence:</label>
+  <input id="play-def" value="123" onkeyup="this.value = this.value.toUpperCase()">CON</input>
   <br/>
   <table>
   <tr>
   <td>
 	<label for="play-o_fwd">Off-fwd:</label>
-	<textarea id="play-o_fwd"></textarea>
+	<input id="play-o_fwd"></input>
   </td>
   <td>
 	<label for="play-d_fwd">Def-fwd:</label>
-	<textarea id="play-d_fwd"></textarea>
+	<input id="play-d_fwd"></input>
   </td>
   </tr>
   <tr>
   <td>
 	<label for="play-o_def">Off-def:</label>
-	<textarea id="play-o_def"></textarea>
+	<input id="play-o_def"></input>
   </td>
   <td>
 	<label for="play-d_def">Def-def:</label>
-	<textarea id="play-d_def"></textarea>
+	<input id="play-d_def"></input>
   </td>
   </tr>
   </table>
 	<label for="play-play_name">Play:</label>
-	<textarea id="play-play_name"></textarea>
+	<input id="play-play_name"></input>
 	<label for="play-play_pic">play_pic:</label>
-	<textarea id="play-play_pic"></textarea>
+	<input id="play-play_pic"></input>
 	<br/>
 	<label for="play-carrier">Puck carrier:</label>
-	<textarea id="play-carrier"></textarea>
+	<input id="play-carrier"></input>
 	<br/>
 	<label for="play-prev_pass">Passed from:</label>
-	<textarea id="play-prev_pass"></textarea>
+	<input id="play-prev_pass"></input>
 </div>
 
   
